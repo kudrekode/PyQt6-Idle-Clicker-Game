@@ -13,6 +13,7 @@ Methodology:
 
 3) Create game logic.
    The game logic was fairly simple. Each level had the same structure of logic:
+   
        def LEVEL_eco (self):
         LEVEL_label = self.findChild(QLabel, "LEVEL_label")
 
@@ -42,15 +43,16 @@ Methodology:
    Thus, each level has two functions. The first connects the label (output wdiget) of the UI file to the logic. It ensures that you cannot purchase a certain levels item unless you have enough of the previous levels item to afford it (producing an error message if this is the case). The function also starts a timer to increase the previous levels item every certain interval.
    The level is then increased by one (calling the unlock_new_level function) but ensures that a boolean function is set first to ensure that you can only go up a level once.
 
-4) Import images.
+5) Import images.
    I created the images using some sotck royalty free photos from google images and Photoshop to created images that corresponded to each level. Each time the user obtains a new level, the image will dynamically change to reflect the new level.
    This proved difficult to import images effectively into the code through QT designer. Three functions were used in the GamePage Class to iterate over a code that loads the next image in the level sequence since the name of each image is only different via the number appended to the end of it, thus this sort of function proved concise and effective:
+   
       def get_image_path_for_level(self, level):
-        base_path = r"C:\Users\Terrarium Background\\"
-        image_path = base_path + str(level) + ".png"
-        return image_path
+              base_path = r"C:\Users\Terrarium Background\\"
+              image_path = base_path + str(level) + ".png"
+              return image_path
 
-5) There is scope to changes this and evaluating it but after debugging i was satisfied with the result as a very basic Idle game strucutre using an iunconventional method (python) for game development. 
+7) There is scope to changes this and evaluating it but after debugging i was satisfied with the result as a very basic Idle game strucutre using an iunconventional method (python) for game development. 
    
 
 
